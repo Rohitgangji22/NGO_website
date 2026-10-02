@@ -1,0 +1,560 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>InAmigos Foundation | Together for Change</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #243047;
+    background: #f8fafc;
+    line-height: 1.6;
+}
+
+header {
+    background: #ffffff;
+    padding: 16px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 12px #00000012;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: bold;
+    color: #15803d;
+}
+
+nav {
+    display: flex;
+    gap: 22px;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+nav a:hover {
+    color: #16a34a;
+}
+
+.btn {
+    display: inline-block;
+    background: #16a34a;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #166534;
+    transform: translateY(-2px);
+}
+
+.hero {
+    min-height: 460px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 35px;
+    background: linear-gradient(120deg, #dcfce7, #eff6ff);
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero h1 {
+    font-size: clamp(34px, 5vw, 55px);
+    line-height: 1.15;
+    color: #14532d;
+    margin: 15px 0;
+}
+
+.hero p {
+    color: #475569;
+    margin-bottom: 25px;
+    font-size: 17px;
+}
+
+.hero-visual {
+    min-width: 240px;
+    width: 340px;
+    height: 280px;
+    border-radius: 28px;
+    background: linear-gradient(145deg, #86efac, #4ade80);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    box-shadow: 0 20px 40px #16653420;
+}
+
+.tag {
+    color: #15803d;
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+section {
+    padding: 65px 8%;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.section-title h2 {
+    font-size: 32px;
+    color: #14532d;
+    margin-bottom: 8px;
+}
+
+.section-title p {
+    color: #64748b;
+}
+
+.about {
+    background: white;
+}
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+    color: #475569;
+}
+
+.impact {
+    background: #14532d;
+    color: white;
+}
+
+.impact .section-title h2,
+.impact .section-title p {
+    color: white;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.stat {
+    text-align: center;
+    background: #ffffff12;
+    border: 1px solid #ffffff25;
+    border-radius: 14px;
+    padding: 25px 10px;
+}
+
+.stat h3 {
+    font-size: 30px;
+    color: #86efac;
+}
+
+.stat p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+.projects {
+    background: #f8fafc;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #0000000c;
+    border: 1px solid #e2e8f0;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px #00000015;
+}
+
+.project-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.card h3 {
+    color: #166534;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.purpose {
+    background: white;
+}
+
+.purpose-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.purpose-item {
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    background: #f0fdf4;
+}
+
+.purpose-item span {
+    font-size: 35px;
+}
+
+.purpose-item h3 {
+    color: #166534;
+    margin: 8px 0;
+}
+
+.purpose-item p {
+    font-size: 14px;
+    color: #64748b;
+}
+
+.join {
+    text-align: center;
+    background: linear-gradient(120deg, #dcfce7, #dbeafe);
+}
+
+.join h2 {
+    color: #14532d;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.join p {
+    color: #475569;
+    margin-bottom: 22px;
+}
+
+footer {
+    background: #102b20;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+footer p {
+    font-size: 13px;
+    color: #d1fae5;
+    margin: 5px;
+}
+
+footer a {
+    color: #86efac;
+    text-decoration: none;
+}
+
+/* Mobile responsive design */
+@media (max-width: 800px) {
+    header {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        padding: 55px 6%;
+    }
+
+    .hero-visual {
+        width: 100%;
+        max-width: 340px;
+        height: 220px;
+    }
+
+    .project-grid,
+    .purpose-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .project-grid,
+    .purpose-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 45px 6%;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navigation -->
+<header>
+    <div class="logo">🌱 InAmigos Foundation</div>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#impact">Impact</a>
+        <a href="#join">Join Us</a>
+    </nav>
+</header>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <span class="tag">UNITING MINDS FOR CHANGE</span>
+        <h1>Together, We Can Make a Difference</h1>
+        <p>
+            Empowering communities through education,
+            environmental conservation, animal welfare
+            and social development.
+        </p>
+        <a href="#projects" class="btn">Explore Our Projects</a>
+    </div>
+    <div class="hero-visual">🌍🤝</div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="section-title">
+        <h2>About InAmigos Foundation</h2>
+        <p>Working together for a better tomorrow</p>
+    </div>
+    <div class="about-content">
+        <p>
+            InAmigos Foundation is a Section 8 non-profit
+            organization founded on 23 September 2020 by
+            Govind Shukla. Based in Chhattisgarh, the
+            foundation works to create positive social
+            change through community-driven initiatives.
+        </p>
+        <p>
+            Its initiatives focus on children's education,
+            women's empowerment, animal welfare,
+            environmental protection, community support
+            and youth skill development.
+        </p>
+        <a href="https://inamigosfoundation.org.in/"
+           class="btn" target="_blank" rel="noopener">
+           Official Website
+        </a>
+    </div>
+</section>
+
+<!-- Impact Section -->
+<section class="impact" id="impact">
+    <div class="section-title">
+        <h2>Our Social Impact</h2>
+        <p>Impact figures reported by InAmigos Foundation</p>
+    </div>
+    <div class="stats">
+        <div class="stat">
+            <h3>50,000+</h3>
+            <p>Meals and clothing distributed</p>
+        </div>
+        <div class="stat">
+            <h3>20,000+</h3>
+            <p>Saplings planted</p>
+        </div>
+        <div class="stat">
+            <h3>30,000+</h3>
+            <p>Interns trained</p>
+        </div>
+        <div class="stat">
+            <h3>50+</h3>
+            <p>Animals fed daily</p>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section class="projects" id="projects">
+    <div class="section-title">
+        <h2>Our Projects</h2>
+        <p>Explore the initiatives creating social impact</p>
+    </div>
+
+    <div class="project-grid">
+
+        <div class="card">
+            <div class="project-icon">📚</div>
+            <h3>Project Bachpanshala</h3>
+            <p>
+                Supporting underprivileged children's
+                education through learning activities,
+                digital literacy and skill development.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="project-icon">🍱</div>
+            <h3>Project Seva</h3>
+            <p>
+                Providing food, clothing and essential
+                support to underprivileged communities
+                and promoting human dignity.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="project-icon">🐾</div>
+            <h3>Project Jeev</h3>
+            <p>
+                Promoting animal welfare through feeding,
+                rescue, protection and care for stray
+                and abandoned animals.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="project-icon">👩‍🎓</div>
+            <h3>Project Udaan</h3>
+            <p>
+                Empowering women through skill training,
+                awareness campaigns and opportunities
+                for financial independence.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="project-icon">🌳</div>
+            <h3>Project Prakriti</h3>
+            <p>
+                Protecting the environment through
+                tree plantation, sustainability
+                awareness and eco-friendly practices.
+            </p>
+        </div>
+
+        <div class="card">
+            <div class="project-icon">💼</div>
+            <h3>Project Vikas</h3>
+            <p>
+                Developing youth employability through
+                internships, practical skills,
+                career guidance and training.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Social Purpose Section -->
+<section class="purpose">
+    <div class="section-title">
+        <h2>Our Purpose</h2>
+        <p>Building a compassionate and inclusive society</p>
+    </div>
+
+    <div class="purpose-grid">
+        <div class="purpose-item">
+            <span>🎓</span>
+            <h3>Education for All</h3>
+            <p>Creating learning opportunities for children
+               and young people.</p>
+        </div>
+        <div class="purpose-item">
+            <span>🌱</span>
+            <h3>Sustainable Future</h3>
+            <p>Encouraging environmental responsibility
+               and conservation.</p>
+        </div>
+        <div class="purpose-item">
+            <span>❤️</span>
+            <h3>Social Equality</h3>
+            <p>Supporting communities and promoting
+               dignity and inclusion.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="join" id="join">
+    <h2>Be a Part of the Change</h2>
+    <p>
+        Your time, skills and support can help
+        create a positive impact in society.
+        Join us in building a better future.
+    </p>
+    <a href="https://inamigosfoundation.org.in/"
+       class="btn" target="_blank" rel="noopener">
+       Join InAmigos
+    </a>
+    <a href="mailto:support@inamigosfoundation.org.in"
+       class="btn">Contact Us</a>
+</section>
+
+<!-- Footer -->
+<footer>
+    <h3>🌱 InAmigos Foundation</h3>
+    <p>Uniting Minds for Change</p>
+    <p>
+        <a href="https://inamigosfoundation.org.in/"
+           target="_blank" rel="noopener">
+           Official Website
+        </a>
+    </p>
+    <p>#InAmigos #InAmigosFoundation #SocialImpact</p>
+    <p>Awareness webpage created as an internship task.</p>
+</footer>
+
+</body>
+</html>
